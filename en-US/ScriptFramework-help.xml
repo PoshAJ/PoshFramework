@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ADServiceAccountCredential</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ADServiceAccountCredential</command:noun>
+      <maml:description>
+        <maml:para>Gets a credential object based on a service account identity.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-ADServiceAccountCredential cmdlet creates a credential object for a specified identity by retrieving the password from Active Directory. You can use the credential object in security operations.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ADServiceAccountCredential</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="distinguishedName, objectGUID, objectSid, sAMAccountName">
+          <maml:name>Identity</maml:name>
+          <maml:description>
+            <maml:para>Specifies an Active Directory service account object by providing one of the following property values. The acceptable values for this parameter are:</maml:para>
+            <maml:para>* A distinguished name</maml:para>
+            <maml:para>* A GUID (objectGUID)</maml:para>
+            <maml:para>* A security identifier (objectSid)</maml:para>
+            <maml:para>* A SAM account name (sAMAccountName)</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Server</maml:name>
+          <maml:description>
+            <maml:para>Specifies the Active Directory Domain Services instance to connect to, by providing one of the following values for a corresponding domain name or directory server.</maml:para>
+            <maml:para>Domain name values: * Fully qualified domain name (FQDN)</maml:para>
+            <maml:para>* NetBIOS name</maml:para>
+            <maml:para></maml:para>
+            <maml:para>Directory server values: * Fully qualified directory server name</maml:para>
+            <maml:para>* NetBIOS name</maml:para>
+            <maml:para>* Fully qualified directory server name and port</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="distinguishedName, objectGUID, objectSid, sAMAccountName">
+        <maml:name>Identity</maml:name>
+        <maml:description>
+          <maml:para>Specifies an Active Directory service account object by providing one of the following property values. The acceptable values for this parameter are:</maml:para>
+          <maml:para>* A distinguished name</maml:para>
+          <maml:para>* A GUID (objectGUID)</maml:para>
+          <maml:para>* A security identifier (objectSid)</maml:para>
+          <maml:para>* A SAM account name (sAMAccountName)</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para>Specifies the Active Directory Domain Services instance to connect to, by providing one of the following values for a corresponding domain name or directory server.</maml:para>
+          <maml:para>Domain name values: * Fully qualified domain name (FQDN)</maml:para>
+          <maml:para>* NetBIOS name</maml:para>
+          <maml:para></maml:para>
+          <maml:para>Directory server values: * Fully qualified directory server name</maml:para>
+          <maml:para>* NetBIOS name</maml:para>
+          <maml:para>* Fully qualified directory server name and port</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a string that contains the identity parameter to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSCredential</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns a credential object for the specified identity.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>You can use the PSCredential object that Get-ADServiceAccountCredential creates in cmdlets that request user authentication, such as those with a Credential parameter.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Get-ADServiceAccountCredential.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Ryan Ephgrave's GMSACredential</maml:linkText>
+        <maml:uri>https://github.com/Ryan2065/gMSACredentialModule</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Introduction to Active Directory Service Accounts</maml:linkText>
+        <maml:uri>https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/service-accounts-group-managed</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Resolve-PSPath</command:name>
+      <command:verb>Resolve</command:verb>
+      <command:noun>PSPath</command:noun>
+      <maml:description>
+        <maml:para>Resolves a path with wildcard support.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Resolve-PSPath cmdlet resolves a drive or provider qualified absolute or relative path that may contain wildcard characters into one or more provider-internal paths.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Resolve-PSPath</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:description>
+            <maml:para>Specifies the path to be resolved. The value of the LiteralPath parameter is used exactly as typed. No characters are interpreted as wildcard character</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Provider</maml:name>
+          <maml:description>
+            <maml:para>Outputs the PSProvider for the specified path(s).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Resolve-PSPath</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies the PowerShell path to resolve.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Provider</maml:name>
+          <maml:description>
+            <maml:para>Outputs the PSProvider for the specified path(s).</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
+        <maml:description>
+          <maml:para>Specifies the path to be resolved. The value of the LiteralPath parameter is used exactly as typed. No characters are interpreted as wildcard character</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifies the PowerShell path to resolve.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Provider</maml:name>
+        <maml:description>
+          <maml:para>Outputs the PSProvider for the specified path(s).</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a string that contains a path to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns a string value for the resolved path.</maml:para>
+        </maml:description>
+      </command:returnValue>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.ProviderInfo</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns a ProviderInfo object if you specify the Provider parameter.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type Get-PSProvider. For more information, see about_Providers (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_providers).</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Resolve-PSPath.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.pathintrinsics.getresolvedproviderpathfrompspath</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.pathintrinsics.getunresolvedproviderpathfrompspath</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Start-Log</command:name>
+      <command:verb>Start</command:verb>
+      <command:noun>Log</command:noun>
+      <maml:description>
+        <maml:para>Creates a log for the PowerShell session.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Start-Log cmdlet creates a record of all or part of a PowerShell session to a text file. The log includes all output from the Write-Log, Write-Information, Write-Warning, and Write-Error cmdlets.</maml:para>
+      <maml:para>Files that are created by the Start-Log cmdlet include random characters in names to prevent potential overwrites or duplication when two or more transcripts are started simultaneously.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. Wildcards are accepted.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Append</maml:name>
+          <maml:description>
+            <maml:para>Adds the output to the end of an existing log.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Append</maml:name>
+          <maml:description>
+            <maml:para>Adds the output to the end of an existing log.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. The value of LiteralPath is used exactly as it's typed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. The value of LiteralPath is used exactly as it's typed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoClobber</maml:name>
+          <maml:description>
+            <maml:para>Prevents an existing file from being overwritten and displays a message that the file already exists.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+          <maml:name>LiteralPath</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. The value of LiteralPath is used exactly as it's typed.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. Wildcards are accepted.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoClobber</maml:name>
+          <maml:description>
+            <maml:para>Prevents an existing file from being overwritten and displays a message that the file already exists.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Start-Log</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specifies a path to the log file. Wildcards are accepted.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsUtc</maml:name>
+          <maml:description>
+            <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Append</maml:name>
+        <maml:description>
+          <maml:para>Adds the output to the end of an existing log.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsUtc</maml:name>
+        <maml:description>
+          <maml:para>Converts date values to the equivalent time in UTC.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PSPath">
+        <maml:name>LiteralPath</maml:name>
+        <maml:description>
+          <maml:para>Specifies a path to the log file. The value of LiteralPath is used exactly as it's typed.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NoClobber</maml:name>
+        <maml:description>
+          <maml:para>Prevents an existing file from being overwritten and displays a message that the file already exists.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>Returns the path for each log that the cmdlet started.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifies a path to the log file. Wildcards are accepted.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe a string that contains a path to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None, String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet generates a string value that represents the path, if you specify the PassThru parameter. Otherwise, this cmdlet does not generate any output.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>The InformationVariable, WarningVariable, and ErrorVariable parameters of the corresponding Write-Information, Write-Warning, and Write-Error cmdlets are used to determine messages written to the PowerShell log. A specific message(s) can be excluded by using the correct parameter with a variable or null as show below.</maml:para>
+        <maml:para>Write-Information -InformationVariable null Write-Warning -WarningVariable null Write-Error -ErrorVariable null</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Start-Log.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>None</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Stop-Log</command:name>
+      <command:verb>Stop</command:verb>
+      <command:noun>Log</command:noun>
+      <maml:description>
+        <maml:para>Stops the PowerShell session log.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Stop-Log cmdlet stops a log that was started by the Start-Log cmdlet.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Stop-Log</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You cannot pipe input to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet does not generate any output.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Stop-Log.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>None</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Use-NullCoalescing</command:name>
+      <command:verb>Use</command:verb>
+      <command:noun>NullCoalescing</command:noun>
+      <maml:description>
+        <maml:para>Impliments the Null-coalescing operator (??).</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Use-NullCoalescing cmdlet simulates the effect of the null-coalescing operator for earlier versions of PowerShell before it was introduced.</maml:para>
+      <maml:para>The null-coalescing operator ?? returns the value of its left-hand operand if it isn't null. Otherwise, it evaluates the right-hand operand and returns its result. The ?? operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Use-NullCoalescing</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IfNull</maml:name>
+          <maml:description>
+            <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is null.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the &lt;condition&gt; expression to be evaluated and returned if not null.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IfNull</maml:name>
+        <maml:description>
+          <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is null.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the &lt;condition&gt; expression to be evaluated and returned if not null.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an object that represents the expression to be evaluated.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns the output that is generated by the executed expression.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Use-NullCoalescing.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Use-Object</command:name>
+      <command:verb>Use</command:verb>
+      <command:noun>Object</command:noun>
+      <maml:description>
+        <maml:para>Provides a convenient syntax that ensures the correct use of IDisposable and COM objects.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Use-Object cmdlet simulates the effect of the using statement found in C# with added support for ComObjects.</maml:para>
+      <maml:para>When the lifetime of an IDisposable or ComObject is limited to a single method, you should declare and instantiate it in the Use-Object cmdlet. The Use-Object cmdlet calls the Dispose or ReleaseComObject method on the object in the correct way when it goes out of scope. The Use-Object cmdlet ensures that Dispose or ReleaseComObject is called even if an exception occurs within the using block.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Use-Object</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the variable assignment for the IDisposable or COM object.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Scriptblock</maml:name>
+          <maml:description>
+            <maml:para>Specifies the commands to run.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the variable assignment for the IDisposable or COM object.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Scriptblock</maml:name>
+        <maml:description>
+          <maml:para>Specifies the commands to run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You cannot pipe input to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns the output that is generated by the executed expression.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Use-Object.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Use-Ternary</command:name>
+      <command:verb>Use</command:verb>
+      <command:noun>Ternary</command:noun>
+      <maml:description>
+        <maml:para>Impliments the Ternary operator (?:).</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Use-Ternary cmdlet simulates the effect of the ternary operator for earlier versions of PowerShell before it was introduced.</maml:para>
+      <maml:para>You can use the ternary operator as a replacement for the if-else statement in simple conditional cases.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Use-Ternary</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>IfTrue</maml:name>
+          <maml:description>
+            <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is true.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>IfFalse</maml:name>
+          <maml:description>
+            <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is false.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Specifies the &lt;condition&gt; expression to be evaluated and converted to a boolean.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>IfFalse</maml:name>
+        <maml:description>
+          <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is false.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>IfTrue</maml:name>
+        <maml:description>
+          <maml:para>Specifies the expression to be executed if the &lt;condition&gt; expression is true.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Specifies the &lt;condition&gt; expression to be evaluated and converted to a boolean.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You can pipe an object that represents the expression to be evaluated.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>Returns the output that is generated by the executed expression.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Use-Ternary.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Write-Log</command:name>
+      <command:verb>Write</command:verb>
+      <command:noun>Log</command:noun>
+      <maml:description>
+        <maml:para>Writes a log message.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Write-Log cmdlet writes a log message to the PowerShell log.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Write-Log</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Message</maml:name>
+          <maml:description>
+            <maml:para>Specifies the log message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>Specifies the type of event.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Log</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Information</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Warning</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Error</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Message</maml:name>
+        <maml:description>
+          <maml:para>Specifies the log message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Type</maml:name>
+        <maml:description>
+          <maml:para>Specifies the type of event.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>You cannot pipe input to this cmdlet.</maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>This cmdlet does not generate any output.</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>The InformationVariable, WarningVariable, and ErrorVariable parameters of the corresponding Write-Information, Write-Warning, and Write-Error cmdlets are used to determine messages written to the PowerShell log. A specific message(s) can be excluded by using the correct parameter with a variable or null as show below.</maml:para>
+        <maml:para>Write-Information -InformationVariable null Write-Warning -WarningVariable null Write-Error -ErrorVariable null</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/CodeAJGit/posh/blob/master/Modules/ScriptFramework/docs/Write-Log.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>None</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
